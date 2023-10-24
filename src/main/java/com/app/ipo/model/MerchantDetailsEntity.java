@@ -1,0 +1,310 @@
+package com.app.ipo.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+@Entity
+@Table(name = "merchant_details")
+public class MerchantDetailsEntity {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "Merchant_Id")
+	private Long merchantId;
+
+    @Column(name = "Name")
+    private String name;
+
+    @Column(name = "Marketing_Name")
+    private String marketingName;
+
+    @Column(name = "Address")
+    private String address;
+
+    @Column(name = "City")
+    private String city;
+
+    @Column(name = "State")
+    private String state;
+
+    @Column(name = "Pincode")
+    @Pattern(regexp = "\\d{6}", message = "Invalid pincode format")
+    private String pincode;
+
+    @Column(name = "Mobile_No")
+    @Pattern(regexp = "[6-9]\\d{9}", message = "Invalid mobile number format")
+    private String mobileNo;
+
+    @Column(name = "Landline_No")
+    @Pattern(regexp = "[0-9]{10}", message = "Invalid landline number format")
+    private String landlineNo;
+    
+    @Column(name = "Director")
+    private String director;
+
+    @Column(name = "Category")
+    private String category;
+
+    @Column(name = "MCC")
+    private String mcc;
+
+    @Column(name = "MCC_Desc")
+    private String mccDesc;
+
+    @Column(name = "Type_Of_Integration")
+    private String typeOfIntegration;
+
+    @Column(name = "VPA")
+    @Pattern(regexp = "^(.*)(bse|nse)@axis$", message = "Invalid VPA format")
+    private String vpa;
+
+    @Column(name = "GST_Number")
+    @Pattern(regexp = "^\\d{2}[A-Z]{5}\\d{4}[A-Z]{1}\\d[Z]{1}[A-Z\\d]{1}$", message = "Invalid GST Number")
+    private String gstNumber;
+
+    @Column(name = "PAN", length = 10)
+    @Pattern(regexp = "^[A-Z]{5}[0-9]{4}[A-Z]{1}$", message = "Invalid PAN format")
+    private String pan;
+
+    @Column(name = "Merchant_Official_Id")
+    private String merchantOfficialId;
+
+    @Column(name = "Merchant_Website")
+    private String merchantWebsite;
+
+    @Column(name = "Bank_Name")
+    private String bankName;
+
+    @Column(name = "IFSC_Code")
+    private String ifscCode;
+
+    @Column(name = "Nodal_Account_No")
+    private String nodalAccountNo;
+
+    @Column(name = "Pool_Account_No")
+    private String poolAccountNo;
+
+    @Column(name = "Pool_IFSC_Code")
+    private String poolIfscCode;
+
+    @Column(name = "SYM")
+    private String sym;
+
+    @Column(name = "Status")
+    private String status;
+
+    public Long getMerchantId() {
+        return merchantId;
+    }
+
+    public void setMerchantId(Long merchantId) {
+        this.merchantId = merchantId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getMarketingName() {
+        return marketingName;
+    }
+
+    public void setMarketingName(String marketingName) {
+        this.marketingName = marketingName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getPincode() {
+        return pincode;
+    }
+
+    public void setPincode(String pincode) {
+        this.pincode = pincode;
+    }
+
+    public String getMobileNo() {
+        return mobileNo;
+    }
+
+    public void setMobileNo(String mobileNo) {
+        this.mobileNo = mobileNo;
+    }
+
+    public String getLandlineNo() {
+        return landlineNo;
+    }
+
+    public void setLandlineNo(String landlineNo) {
+        this.landlineNo = landlineNo;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getMcc() {
+        return mcc;
+    }
+
+    public void setMcc(String mcc) {
+        this.mcc = mcc;
+    }
+
+    public String getMccDesc() {
+        return mccDesc;
+    }
+
+    public void setMccDesc(String mccDesc) {
+        this.mccDesc = mccDesc;
+    }
+
+    public String getTypeOfIntegration() {
+        return typeOfIntegration;
+    }
+
+    public void setTypeOfIntegration(String typeOfIntegration) {
+        this.typeOfIntegration = typeOfIntegration;
+    }
+
+    public String getVPA() {
+        return vpa;
+    }
+
+    public void setVpa(String vpa) {
+        this.vpa = vpa;
+    }
+
+
+    public String getGstNumber() {
+        return gstNumber;
+    }
+
+    public void setGstNumber(String gstNumber) {
+        this.gstNumber = gstNumber;
+    }
+
+    public String getPan() {
+        return pan;
+    }
+
+    public void setPan(String pan) {
+        this.pan = pan;
+    }
+
+    public String getMerchantOfficialId() {
+        return merchantOfficialId;
+    }
+
+    public void setMerchantOfficialId(String merchantOfficialId) {
+        this.merchantOfficialId = merchantOfficialId;
+    }
+
+    public String getMerchantWebsite() {
+        return merchantWebsite;
+    }
+
+    public void setMerchantWebsite(String merchantWebsite) {
+        this.merchantWebsite = merchantWebsite;
+    }
+
+    public String getBankName() {
+        return bankName;
+    }
+
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
+    }
+
+    public String getIfscCode() {
+        return ifscCode;
+    }
+
+    public void setIfscCode(String ifscCode) {
+        this.ifscCode = ifscCode;
+    }
+
+    public String getNodalAccountNo() {
+        return nodalAccountNo;
+    }
+
+    public void setNodalAccountNo(String nodalAccountNo) {
+        this.nodalAccountNo = nodalAccountNo;
+    }
+
+    public String getPoolAccountNo() {
+        return poolAccountNo;
+    }
+
+    public void setPoolAccountNo(String poolAccountNo) {
+        this.poolAccountNo = poolAccountNo;
+    }
+
+    public String getPoolIfscCode() {
+        return poolIfscCode;
+    }
+
+    public void setPoolIfscCode(String poolIfscCode) {
+        this.poolIfscCode = poolIfscCode;
+    }
+
+    public String getSym() {
+        return sym;
+    }
+
+    public void setSym(String sym) {
+        this.sym = sym;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = "approved"; 
+    }
+}
